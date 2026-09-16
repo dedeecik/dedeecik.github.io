@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Gizlilik Politikası — Game Buddy</title>
+<meta name="description" content="Game Buddy gizlilik politikası">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&display=swap">
+<style>
+:root {
+  --zemin: #F4EFEF; --yuzey: #FFFFFF; --murekkep: #2A2124;
+  --ikincil: #6B5B60; --sonuk: #8C7A7E; --cizgi: #E6DADC;
+  --gul: #B9737F; --gul-koyu: #9E6480; --odak: #B9737F;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --zemin: #17131A; --yuzey: #221C25; --murekkep: #F2EBED;
+    --ikincil: #B6A6AC; --sonuk: #8C7C82; --cizgi: #342B37;
+    --gul: #D98A98; --gul-koyu: #C4798F; --odak: #D98A98;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--zemin); color: var(--murekkep);
+  font: 17px/1.65 "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--gul); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--odak); outline-offset: 3px; border-radius: 4px; }
+.sayfa { max-width: 720px; margin: 0 auto; padding: 0 22px 72px; }
+header.ust {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 22px 0 10px; gap: 16px;
+}
+.marka {
+  font-weight: 700; font-size: 19px; letter-spacing: -.01em;
+  color: var(--murekkep); text-decoration: none;
+}
+.marka b { color: var(--gul); font-weight: 700; }
+.dil { font-size: 14px; color: var(--sonuk); text-decoration: none; }
+.dil:hover { color: var(--gul); }
+h1 {
+  font-size: clamp(30px, 6vw, 40px); line-height: 1.12; letter-spacing: -.025em;
+  margin: 34px 0 8px; text-wrap: balance;
+}
+.guncelleme { color: var(--sonuk); font-size: 14.5px; margin: 0 0 26px; }
+h2 {
+  font-size: 21px; line-height: 1.3; letter-spacing: -.01em;
+  margin: 44px 0 10px; scroll-margin-top: 20px; display: flex; gap: 8px; align-items: baseline;
+}
+h2 .no { color: var(--gul); font-variant-numeric: tabular-nums; min-width: 1.3em; }
+p, li { color: var(--ikincil); max-width: 66ch; }
+p { margin: 0 0 14px; }
+ul { margin: 0 0 16px; padding-left: 22px; }
+li { margin-bottom: 7px; }
+li::marker { color: var(--gul); }
+.icindekiler {
+  background: var(--yuzey); border: 1px solid var(--cizgi); border-radius: 18px;
+  padding: 18px 22px; margin-bottom: 8px;
+}
+.icindekiler ol { margin: 0; padding-left: 22px; columns: 2; column-gap: 28px; }
+.icindekiler li { margin: 0 0 6px; break-inside: avoid; font-size: 15px; }
+.icindekiler li::marker { color: var(--sonuk); font-variant-numeric: tabular-nums; }
+.icindekiler a { color: var(--murekkep); text-decoration: none; }
+.icindekiler a:hover { color: var(--gul); }
+@media (max-width: 560px) { .icindekiler ol { columns: 1; } }
+footer {
+  margin-top: 64px; padding-top: 22px; border-top: 1px solid var(--cizgi);
+  display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 14px; color: var(--sonuk);
+}
+footer a { color: var(--sonuk); text-decoration: none; }
+footer a:hover { color: var(--gul); }
+
+/* Ana sayfa */
+.kahraman { padding: 64px 0 20px; }
+.amblem {
+  width: 72px; height: 72px; border-radius: 22px;
+  background: linear-gradient(135deg, var(--gul), var(--gul-koyu));
+  display: grid; place-items: center; margin-bottom: 26px;
+  box-shadow: 0 14px 30px -12px var(--gul);
+}
+.amblem svg { width: 40px; height: 40px; fill: #FFF7F8; }
+.kahraman h1 { font-size: clamp(40px, 9vw, 58px); margin: 0 0 10px; }
+.slogan { font-size: 21px; color: var(--ikincil); margin: 0 0 18px; }
+.aciklama { font-size: 17px; max-width: 46ch; }
+.yakinda {
+  display: inline-block; margin-top: 10px; padding: 7px 14px; border-radius: 999px;
+  background: color-mix(in srgb, var(--gul) 14%, transparent);
+  color: var(--gul); font-weight: 600; font-size: 14.5px;
+}
+.kartlar { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 48px; }
+.kart {
+  display: block; background: var(--yuzey); border: 1px solid var(--cizgi); border-radius: 18px;
+  padding: 20px 22px; text-decoration: none; color: var(--murekkep);
+  transition: border-color .15s ease, transform .15s ease;
+}
+.kart:hover { border-color: var(--gul); transform: translateY(-2px); }
+.kart strong { display: block; font-size: 17px; margin-bottom: 4px; }
+.kart span { color: var(--sonuk); font-size: 14.5px; }
+
+/* Destek */
+.iletisim {
+  background: var(--yuzey); border: 1px solid var(--cizgi); border-radius: 18px;
+  padding: 22px 24px; margin: 8px 0 12px;
+}
+.iletisim .etiket { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--sonuk); margin: 0 0 4px; }
+.iletisim a { font-size: 21px; font-weight: 700; text-decoration: none; }
+.iletisim p:last-child { margin: 8px 0 0; font-size: 15px; }
+details {
+  background: var(--yuzey); border: 1px solid var(--cizgi); border-radius: 16px;
+  padding: 0 20px; margin-bottom: 10px;
+}
+summary {
+  cursor: pointer; font-weight: 600; padding: 16px 0; list-style: none;
+  display: flex; justify-content: space-between; gap: 16px;
+}
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; color: var(--gul); font-weight: 400; font-size: 22px; line-height: 1; }
+details[open] summary::after { content: "−"; }
+details > div { padding-bottom: 6px; }
+kbd {
+  font: inherit; font-size: .92em; background: var(--zemin); border: 1px solid var(--cizgi);
+  border-radius: 6px; padding: 1px 6px; color: var(--murekkep); white-space: nowrap;
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="sayfa">
+<header class="ust">
+  <a class="marka" href="../">Game <b>Buddy</b></a>
+  <a class="dil" href="../privacy/" hreflang="en">English</a>
+</header>
+<main>
+<h1>Gizlilik Politikası</h1>
+<p class="guncelleme">Son güncelleme: 16 Eylül 2026</p>
+<p>Bu politika, Game Buddy'yi kullandığında hangi kişisel verilerini işlediğimizi, neden işlediğimizi ve haklarının neler olduğunu açıklar.</p>
+<nav class="icindekiler"><ol><li><a href="#b1">İşlediğimiz Veriler</a></li><li><a href="#b2">Verileri Neden İşliyoruz</a></li><li><a href="#b3">Verilerin Kimlerle Paylaşılıyor</a></li><li><a href="#b4">Reklamlar ve İzleme</a></li><li><a href="#b5">Saklama Süresi</a></li><li><a href="#b6">Gizlilik Ayarların</a></li><li><a href="#b7">Haklarını</a></li><li><a href="#b8">Güvenlik</a></li><li><a href="#b9">Çocukların Verileri</a></li><li><a href="#b10">Değişiklikler</a></li><li><a href="#b11">İletişim</a></li></ol></nav>
+<h2 id="b1"><span class="no">1</span>İşlediğimiz Veriler</h2>
+<p>Bize doğrudan verdiklerin:</p>
+<ul><li>Hesap bilgileri: e-posta adresi, şifre (şifrelenmiş olarak Firebase Authentication'da tutulur)</li><li>Profil bilgileri: nickname, yaş, cinsiyet, biyografi, slogan, profil fotoğrafı</li><li>Oyun tercihleri: oynadığın oyunlar, rank bilgisi, oyun içi nickin, roller, platformlar, müsait saatler, konuşulan dil, oyun tarzı ve hedefi</li><li>Sosyal medya hesap adların (Kick, TikTok, Twitch, Discord) — yalnızca sen girdiysen</li><li>Mesajların ve gönderdiğin davetler</li><li>Şikayet ve değerlendirme kayıtların</li></ul>
+<p>Kullanım sırasında otomatik oluşanlar:</p>
+<ul><li>Son görülme zamanı ve çevrimiçi durumu</li><li>Beğeni, geçme ve eşleşme kayıtları</li><li>Profil ziyaret kayıtları</li><li>Uygulama tercihlerin (dil, tema, bildirim ve gizlilik ayarları)</li><li>Reklam verileri: cihazının reklam kimliği (iPhone'da yalnızca izin verirsen), cihaz modeli, işletim sistemi, IP adresinden çıkarılan ülke ve şehir düzeyinde yaklaşık konum ve reklamlarla etkileşimin. Bunları Google AdMob toplar.</li><li>Çökme raporları: cihaz modeli, işletim sistemi ve uygulama sürümü ile hatanın teknik kaydı. Bunları Firebase Crashlytics toplar.</li></ul>
+<p>Cihazının konum servislerini (GPS) kullanmıyoruz. Rehberine, galerinin tamamına veya cihazındaki diğer uygulamalara erişmiyoruz; profil fotoğrafı için yalnızca senin seçtiğin görsele erişiriz.</p>
+<h2 id="b2"><span class="no">2</span>Verileri Neden İşliyoruz</h2>
+<ul><li>Hesabını oluşturmak ve oturumunu sürdürmek</li><li>Sana uygun oyuncuları göstermek ve eşleştirme yapmak (uyum skoru, filtreler)</li><li>Eşleştiğin kişilerle mesajlaşmanı sağlamak</li><li>Premium üyelik haklarını ve kullanım limitlerini takip etmek</li><li>Uygulamayı ücretsiz sunabilmek için reklam göstermek</li><li>Çökmeleri ve hataları tespit edip düzeltmek</li><li>Kötüye kullanımı, sahte hesapları ve taciz bildirimlerini incelemek</li><li>Yasal yükümlülüklerimizi yerine getirmek</li></ul>
+<h2 id="b3"><span class="no">3</span>Verilerin Kimlerle Paylaşılıyor</h2>
+<p>Diğer kullanıcılarla: profil bilgilerin, oyun tercihlerin ve fotoğrafın kaydırma ekranında diğer kullanıcılara gösterilir. Oyun içi nickin yalnızca eşleştiğin kişilere görünür. Sosyal medya hesapların profilini inceleyen kullanıcılara görünür. E-posta adresin ve şifren hiçbir kullanıcıyla paylaşılmaz.</p>
+<p>Hizmet sağlayıcılarla:</p>
+<ul><li>Google Firebase (Authentication, Cloud Firestore) — hesap ve uygulama verilerinin barındırılması</li><li>Cloudinary — profil fotoğraflarının barındırılması</li><li>Google AdMob — reklamların gösterilmesi ve ölçülmesi</li><li>Firebase Crashlytics — çökme raporlarının toplanması</li></ul>
+<p>Bu sağlayıcılar verilerini yalnızca bizim adımıza, bu politikada belirtilen amaçlarla işler. Sunucular yurt dışında bulunabilir; bu durumda veri aktarımı ilgili mevzuata uygun olarak yapılır.</p>
+<p>Yasal olarak: yetkili makamların hukuka uygun talebi halinde verilerini paylaşmak zorunda kalabiliriz.</p>
+<p>Verilerini hiçbir şekilde satmıyoruz.</p>
+<h2 id="b4"><span class="no">4</span>Reklamlar ve İzleme</h2>
+<p>Game Buddy'nin ücretsiz sürümünde Google AdMob tarafından sağlanan reklamlar gösterilir. Premium üyeler reklam görmez.</p>
+<p>AdMob, reklam göstermek ve ölçmek için cihazının reklam kimliğini ve yukarıda belirtilen cihaz bilgilerini kendi gizlilik politikasına göre işler: <a href="https://policies.google.com/privacy" rel="noopener">https://policies.google.com/privacy</a></p>
+<p>Profil bilgilerin, mesajların, fotoğrafın ve oyun tercihlerin reklam ortaklarıyla paylaşılmaz.</p>
+<p>iPhone'da: Uygulama, reklam kimliğini kullanmadan önce izin ister. İzin vermezsen reklamlar kişiselleştirilmeden gösterilir ve uygulamanın hiçbir özelliği kısıtlanmaz. Bu tercihi iPhone'un Ayarlar &gt; Gizlilik ve Güvenlik &gt; İzleme bölümünden istediğin zaman değiştirebilirsin.</p>
+<p>Avrupa Ekonomik Alanı, İngiltere ve İsviçre'de: Reklam göstermeden önce onayın istenir. Tercihini uygulamada Ayarlar &gt; Gizlilik &gt; Reklam izinleri bölümünden istediğin zaman değiştirebilir ya da geri alabilirsin.</p>
+<h2 id="b5"><span class="no">5</span>Saklama Süresi</h2>
+<p>Verilerini hesabın açık olduğu sürece saklarız. Hesabını sildiğinde profilin, eşleşmelerin, mesajların, beğenilerin ve ziyaret kayıtların kalıcı olarak silinir. Şikayet kayıtları, kötüye kullanımın önlenmesi amacıyla kimliğinden arındırılmış biçimde daha uzun süre saklanabilir.</p>
+<p>Çökme raporları 90 gün sonra otomatik olarak silinir. AdMob'un topladığı veriler Google'ın saklama politikasına tabidir.</p>
+<h2 id="b6"><span class="no">6</span>Gizlilik Ayarların</h2>
+<p>Ayarlar bölümünden çevrimiçi durumunu gizleyebilir, bildirim tercihlerini değiştirebilir, engellediğin kullanıcıları yönetebilirsin. Cinsiyet bilgisi, kötüye kullanımı önlemek amacıyla yalnızca bir kez değiştirilebilir.</p>
+<h2 id="b7"><span class="no">7</span>Haklarını</h2>
+<p>KVKK kapsamında; kişisel verilerinin işlenip işlenmediğini öğrenme, bunlara erişme, düzeltilmesini veya silinmesini isteme, işlemeye itiraz etme ve verilerinin bir kopyasını talep etme hakkına sahipsin. Bu haklarını kullanmak için <a href="mailto:destek@getgamebuddy.com">destek@getgamebuddy.com</a> adresine yazabilirsin. Taleplere en geç 30 gün içinde yanıt veririz.</p>
+<p>Avrupa Ekonomik Alanı, İngiltere veya İsviçre'de yaşıyorsan GDPR kapsamında da bu haklara sahipsin. Bunlara ek olarak verilerinin taşınmasını isteme, verdiğin onayı istediğin zaman geri alma ve yaşadığın ülkenin veri koruma otoritesine şikâyette bulunma hakkın vardır.</p>
+<p>Verilerini şu hukuki dayanaklarla işliyoruz:</p>
+<ul><li>Hesap, eşleştirme ve mesajlaşma: sana hizmeti sunabilmek (sözleşmenin ifası)</li><li>Kişiselleştirilmiş reklam: açık rızan (onay penceresi ve iPhone izleme izni)</li><li>Çökme raporları, güvenlik ve kötüye kullanımın önlenmesi: meşru menfaat</li><li>Yetkili makam talepleri: yasal yükümlülük</li></ul>
+<p>Profil bilgilerinin çoğunu doğrudan uygulama içinden düzenleyebilir, hesabını Ayarlar bölümünden kendin silebilirsin.</p>
+<h2 id="b8"><span class="no">8</span>Güvenlik</h2>
+<p>Verilerini yetkisiz erişime karşı korumak için sektör standardı önlemler alıyoruz: şifreler karma (hash) olarak saklanır, veri tabanı erişimi kural tabanlı olarak kısıtlanır, iletişim şifrelenmiş bağlantı üzerinden yapılır. Buna rağmen hiçbir sistemin yüzde yüz güvenli olmadığını hatırlatırız.</p>
+<h2 id="b9"><span class="no">9</span>Çocukların Verileri</h2>
+<p>Uygulama 18 yaş altına kapalıdır. 18 yaşından küçük birine ait veri işlediğimizi öğrenirsek hesabı kapatır ve verileri sileriz.</p>
+<h2 id="b10"><span class="no">10</span>Değişiklikler</h2>
+<p>Bu politikayı güncelleyebiliriz. Önemli değişiklikleri Uygulama içinde duyururuz.</p>
+<h2 id="b11"><span class="no">11</span>İletişim</h2>
+<p>Gizlilikle ilgili sorularını <a href="mailto:destek@getgamebuddy.com">destek@getgamebuddy.com</a> adresine iletebilirsin.</p>
+
+</main>
+<footer><a href="../gizlilik/">Gizlilik Politikası</a><a href="../destek/">Destek</a><a href="mailto:destek@getgamebuddy.com">destek@getgamebuddy.com</a><span>© 2026 Game Buddy</span></footer>
+</div>
+</body>
+</html>
