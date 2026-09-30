@@ -23,7 +23,7 @@ const SOZLESMELER = path.join(UYGULAMA, 'lib', 'sozlesmeler.dart');
 const dart = fs.readFileSync(SOZLESMELER, 'utf8');
 
 function sabitMetin(ad) {
-  const m = dart.match(new RegExp(`const String ${ad} = '''\\n([\\s\\S]*?)''';`));
+  const m = dart.match(new RegExp(`const String ${ad} = '''\\r?\\n([\\s\\S]*?)''';`));
   if (!m) throw new Error(`${ad} sozlesmeler.dart icinde bulunamadi`);
   return m[1];
 }
@@ -31,7 +31,11 @@ function sabitMetin(ad) {
 const eposta = (dart.match(/const String iletisimEposta = '([^']+)';/) || [])[1];
 if (!eposta) throw new Error('iletisimEposta bulunamadi');
 
-const yerlestir = (t) => t.replace(/\$iletisimEposta/g, eposta);
+// Kaynak dosya Windows satir sonlariyla gelebiliyor; uretilen HTML'e
+// tasinmasinlar.
+const satirlariDuzelt = (t) => t.replace(/\r\n/g, '\n');
+const yerlestir = (t) =>
+  satirlariDuzelt(t).replace(/\$iletisimEposta/g, eposta);
 const politikaTr = yerlestir(sabitMetin('gizlilikPolitikasi'));
 const politikaEn = yerlestir(sabitMetin('gizlilikPolitikasiEn'));
 
