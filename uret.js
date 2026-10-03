@@ -28,14 +28,36 @@ function sabitMetin(ad) {
   return m[1];
 }
 
-const eposta = (dart.match(/const String iletisimEposta = '([^']+)';/) || [])[1];
+// Tek tırnaklı bütün sabitler toplanıyor; politika metni bunlara $ad
+// biçiminde atıf yapıyor.
+//
+// Eskiden yalnızca iletisimEposta çözülüyordu. sozlesmeler.dart'a veri
+// sorumlusu sabiti eklenince siteye "$veriSorumlusu" diye ham haliyle
+// yazıldı ve kimse fark etmedi. Artık yeni sabit eklemek için burada bir
+// şey yapmak gerekmiyor; çözülemeyen değişken kalırsa üretim duruyor.
+const sabitler = {};
+for (const m of dart.matchAll(/const String (\w+) = '([^']*)';/g)) {
+  sabitler[m[1]] = m[2];
+}
+const eposta = sabitler.iletisimEposta;
 if (!eposta) throw new Error('iletisimEposta bulunamadi');
 
 // Kaynak dosya Windows satir sonlariyla gelebiliyor; uretilen HTML'e
 // tasinmasinlar.
 const satirlariDuzelt = (t) => t.replace(/\r\n/g, '\n');
-const yerlestir = (t) =>
-  satirlariDuzelt(t).replace(/\$iletisimEposta/g, eposta);
+
+// Uzun adlar önce: $iletisimEposta'nın yanında $iletisim diye bir sabit
+// olsaydı kısa olan uzun olanın içine denk gelirdi.
+const sabitAdlari = Object.keys(sabitler).sort((a, b) => b.length - a.length);
+const yerlestir = (t) => {
+  let metin = satirlariDuzelt(t);
+  for (const ad of sabitAdlari) metin = metin.split('$' + ad).join(sabitler[ad]);
+  const kalan = metin.match(/\$\w+/g);
+  if (kalan) {
+    throw new Error('Çözülmeyen değişken: ' + [...new Set(kalan)].join(', '));
+  }
+  return metin;
+};
 const politikaTr = yerlestir(sabitMetin('gizlilikPolitikasi'));
 const politikaEn = yerlestir(sabitMetin('gizlilikPolitikasiEn'));
 
